@@ -1,0 +1,24 @@
+
+u also get updates for docs.docker.com(website)
+Install Docker on CentOS:
+
+	sudo yum install -y device-mapper-persistent-data lvm2
+	sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+	sudo yum install -y docker-ce docker-ce-cli containerd.io
+	sudo systemctl start docker
+	sudo systemctl enable docker
+
+Test the installation by running a simple container:
+	docker run hello-world
+
+===========================================================================
+
+Add your user to the docker group, giving the user permission to run docker commands:
+        sudo usermod -aG docker cloud_user
+
+===========================================================================
+
+Install docker-compose
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
